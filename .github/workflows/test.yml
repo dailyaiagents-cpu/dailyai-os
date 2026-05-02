@@ -1,0 +1,46 @@
+name: skill-bundle-validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify each skill has SKILL.md and run.sh
+        run: |
+          fail=0
+          for d in skills/*/; do
+            name=$(basename "$d")
+            if [ ! -f "${d}SKILL.md" ]; then echo "MISSING SKILL.md: $name"; fail=1; fi
+            if [ ! -f "${d}run.sh" ]; then echo "MISSING run.sh: $name"; fail=1; fi
+            if [ -f "${d}run.sh" ] && [ ! -x "${d}run.sh" ]; then echo "NOT EXECUTABLE: $name/run.sh"; fail=1; fi
+          done
+          exit $fail
+
+      - name: Verify SKILL.md frontmatter has required fields
+        run: |
+          fail=0
+          for f in skills/*/SKILL.md; do
+            if ! head -10 "$f" | grep -q "^name:"; then echo "MISSING name: in $f"; fail=1; fi
+            if ! head -10 "$f" | grep -q "^description:"; then echo "MISSING description: in $f"; fail=1; fi
+          done
+          exit $fail
+
+      - name: Verify no Cooper-specific paths leaked through
+        run: |
+          if grep -rn "/Users/bots" skills/ 2>/dev/null; then
+            echo "FAIL: Cooper-specific paths found in published bundle"
+            exit 1
+          fi
+
+      - name: Bash syntax-check every run.sh
+        run: |
+          for f in skills/*/run.sh; do
+            bash -n "$f" || exit 1
+          done
