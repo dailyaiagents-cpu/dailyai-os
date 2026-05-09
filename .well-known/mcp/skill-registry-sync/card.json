@@ -1,0 +1,22 @@
+{
+  "schema_version": "1",
+  "name": "skill-registry-sync",
+  "skill_uri": "skill://daily-ai-agents/skill-registry-sync",
+  "description": "Auto-wire newly-shipped skills into owner-agent SOUL.md by reading `owner_agent:` frontmatter and rewriting the block between AUTO-GENERATED-SKILLS markers. Eliminates the hand-edit-or-silently-fail pattern. Cron 0 */6 * * * CT.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "builder",
+  "capability_tags": [
+    "agent",
+    "registry",
+    "skill",
+    "sync"
+  ],
+  "dependencies": [],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/skill-registry-sync",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/skill-registry-sync/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

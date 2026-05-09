@@ -1,0 +1,22 @@
+{
+  "schema_version": "1",
+  "name": "cron-self-heal",
+  "skill_uri": "skill://daily-ai-agents/cron-self-heal",
+  "description": "Watcher \u2014 surfaces crons in error state. RED if >33% failing, YELLOW otherwise. Future: glob-match per-skill expected_output_glob frontmatter for richer health.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "builder",
+  "capability_tags": [
+    "cron",
+    "heal",
+    "self",
+    "skill"
+  ],
+  "dependencies": [],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/cron-self-heal",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/cron-self-heal/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

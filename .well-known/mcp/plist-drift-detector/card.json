@@ -1,0 +1,22 @@
+{
+  "schema_version": "1",
+  "name": "plist-drift-detector",
+  "skill_uri": "skill://daily-ai-agents/plist-drift-detector",
+  "description": "Every 6h, compare loaded launchd labels (launchctl list) against source-of-truth plists in config/launchd/. Telegram-alerts on missing-from-source or missing-from-loaded. State file for cooldown so we don't repeat alerts on stable drift.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "ops",
+  "capability_tags": [
+    "detector",
+    "drift",
+    "plist",
+    "telegram"
+  ],
+  "dependencies": [],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/plist-drift-detector",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/plist-drift-detector/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

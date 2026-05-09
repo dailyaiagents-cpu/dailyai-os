@@ -1,0 +1,23 @@
+{
+  "schema_version": "1",
+  "name": "heartbeat-silence-check",
+  "skill_uri": "skill://daily-ai-agents/heartbeat-silence-check",
+  "description": "Detects when workspace/system_memory/heartbeats.json mtime exceeds the silence threshold (default 6h). Voice-alerts + Telegram-pings Cooper at high priority. Counter-measure for the v11.0 archive-too-aggressive failure that left the heartbeat-collector silent for 67h before cont-14 revived it.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "ops",
+  "capability_tags": [
+    "check",
+    "heartbeat",
+    "silence",
+    "telegram",
+    "voice"
+  ],
+  "dependencies": [],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/heartbeat-silence-check",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/heartbeat-silence-check/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

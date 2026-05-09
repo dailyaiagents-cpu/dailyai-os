@@ -1,0 +1,23 @@
+{
+  "schema_version": "1",
+  "name": "mrr-floor-check",
+  "skill_uri": "skill://daily-ai-agents/mrr-floor-check",
+  "description": "Daily Stripe MRR query against a configured floor. Writes snapshot JSON to data/finance/mrr_history/, fires Telegram high-priority alert on floor breach. Floor is 0 by default (silent) until Cooper tunes it after 30 days of data.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "hermes",
+  "capability_tags": [
+    "check",
+    "daily",
+    "floor",
+    "stripe",
+    "telegram"
+  ],
+  "dependencies": [],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/mrr-floor-check",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/mrr-floor-check/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

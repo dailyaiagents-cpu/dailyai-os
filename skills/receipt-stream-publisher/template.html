@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Receipts — Daily AI Agents</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Live operational receipts from the Daily AI Agents runtime. Auto-refreshed hourly.">
+<style>
+  :root { --bg: #0b0d0f; --fg: #e6e6e6; --dim: #8b9099; --ok: #4ec9b0; --warn: #d7ba7d; --bad: #f48771; --ink: #d4d4d4; }
+  body { font: 15px/1.55 -apple-system, "Helvetica Neue", system-ui, sans-serif; background: var(--bg); color: var(--fg); margin: 0; padding: 32px 20px; max-width: 760px; margin: 0 auto; }
+  h1 { font-size: 24px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dim); margin: 28px 0 8px; }
+  .meta { color: var(--dim); font-size: 13px; margin-bottom: 24px; }
+  .section { background: rgba(255,255,255,0.02); border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; }
+  .row { display: flex; justify-content: space-between; gap: 12px; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .row:last-child { border-bottom: 0; }
+  .ok { color: var(--ok); }
+  .warn { color: var(--warn); }
+  .bad { color: var(--bad); }
+  .sha { font-family: ui-monospace, "SF Mono", Menlo, monospace; color: var(--dim); }
+  .subject { color: var(--ink); flex: 1; padding-left: 12px; }
+  .footer { margin-top: 36px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); color: var(--dim); font-size: 12px; }
+  a { color: var(--ok); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code { font-family: ui-monospace, "SF Mono", Menlo, monospace; background: rgba(255,255,255,0.04); padding: 1px 5px; border-radius: 3px; font-size: 13px; }
+  .empty { color: var(--dim); font-style: italic; padding: 6px 0; }
+</style>
+</head>
+<body>
+<h1>Receipts</h1>
+<div class="meta">Last 24 hours of substrate activity. Auto-refreshed hourly. Source of truth: <code>site/api/receipts.json</code>.</div>
+
+<div id="root">Loading…</div>
+
+<div class="footer">
+  Daily AI Agents · operational ticker · <span id="asof"></span>
+  · <a href="/">home</a>
+  · <a href="/api/receipts.json">JSON</a>
+  · <a href="/spec.html">spec</a>
+</div>
+
+<script>
+async function render() {
+  let data;
+  try {
+    const r = await fetch('/api/receipts.json?ts=' + Date.now());
+    data = await r.json();
+  } catch (e) {
+    document.getElementById('root').innerHTML = '<div class="bad">receipts.json not reachable: ' + e.message + '</div>';
+    return;
+  }
+
+  const root = document.getElementById('root');
+  const html = [];
+
+  // substrate
+  const s = data.substrate || {};
+  const cls = (v) => (v === 'ok' || v === 'GREEN') ? 'ok' : (v === 'YELLOW' ? 'warn' : 'bad');
+  html.push('<h2>Substrate</h2><div class="section">');
+  html.push('<div class="row"><span>hermes</span><span class="' + cls(s.hermes) + '">' + (s.hermes || '?') + '</span></div>');
+  html.push('<div class="row"><span>openclaw</span><span class="' + cls(s.openclaw) + '">' + (s.openclaw || '?') + '</span></div>');
+  html.push('<div class="row"><span>obsidian</span><span class="' + cls(s.obsidian) + '">' + (s.obsidian || '?') + '</span></div>');
+  html.push('<div class="row"><span>paperclip</span><span class="' + cls(s.paperclip) + '">' + (s.paperclip || '?') + '</span></div>');
+  html.push('<div class="row"><span>drift-recovery</span><span class="' + cls(s.drift) + '">' + (s.drift || '?') + '</span></div>');
+  html.push('</div>');
+
+  // commits
+  html.push('<h2>Commits (last 24h)</h2><div class="section">');
+  if (data.commits_24h && data.commits_24h.length) {
+    for (const c of data.commits_24h) {
+      html.push('<div class="row"><span class="sha">' + c.sha + '</span><span class="subject">' + escapeHtml(c.subject) + '</span></div>');
+    }
+  } else {
+    html.push('<div class="empty">no commits in window</div>');
+  }
+  html.push('</div>');
+
+  // voice-gate + p-gate + smoke
+  html.push('<h2>Gates &amp; smoke (last 24h)</h2><div class="section">');
+  const vg = data.voice_gate_24h || {pass: 0, fail: 0};
+  html.push('<div class="row"><span>voice-gate</span><span class="ok">' + vg.pass + ' pass</span><span class="bad">' + vg.fail + ' fail</span></div>');
+  const pgc = data.p_gate_catches_24h || {};
+  if (Object.keys(pgc).length) {
+    html.push('<div class="row"><span>P-gate catches</span><span>' + Object.entries(pgc).map(e => e[0]+': '+e[1]).join(', ') + '</span></div>');
+  } else {
+    html.push('<div class="row"><span>P-gate catches</span><span class="empty">none recorded</span></div>');
+  }
+  const sp = data.smoke_passes_24h || {};
+  const totalSmoke = Object.values(sp).reduce((a,b)=>a+b, 0);
+  html.push('<div class="row"><span>smoke passes</span><span class="ok">' + totalSmoke + ' across ' + Object.keys(sp).length + ' skills</span></div>');
+  html.push('<div class="row"><span>P-gates active</span><span class="ok">' + (data.p_gates_active || 0) + '</span></div>');
+  html.push('</div>');
+
+  root.innerHTML = html.join('');
+  document.getElementById('asof').textContent = data.as_of || 'unknown';
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+render();
+</script>
+</body>
+</html>

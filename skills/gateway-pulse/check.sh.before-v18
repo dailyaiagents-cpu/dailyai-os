@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# gateway-pulse — probe the four pillars. Single-line stdout: STATUS=GREEN|YELLOW|RED detail=...
+set +e
+
+dets=()
+status="GREEN"
+
+# Hermes — port 4010 (its gateway listens here)
+if curl -sf --max-time 3 -o /dev/null http://127.0.0.1:4010/__status 2>/dev/null; then
+  dets+=("hermes:ok")
+else
+  dets+=("hermes:DOWN")
+  status="RED"
+fi
+
+# OpenClaw — port 18789
+if nc -z -w2 127.0.0.1 18789 2>/dev/null; then
+  dets+=("openclaw:ok")
+else
+  dets+=("openclaw:DOWN")
+  status="RED"
+fi
+
+# Paperclip — port 3100
+if curl -sf --max-time 3 -o /dev/null http://127.0.0.1:3100/ 2>/dev/null; then
+  dets+=("paperclip:ok")
+else
+  dets+=("paperclip:DOWN")
+  if [ "$status" = "GREEN" ]; then status="YELLOW"; fi
+fi
+
+# Obsidian — port 27124 (https with token)
+if curl -sk --max-time 3 -o /dev/null -w "%{http_code}" https://127.0.0.1:27124/ 2>/dev/null | grep -qE '^(200|401)$'; then
+  dets+=("obsidian:ok")
+else
+  dets+=("obsidian:DOWN")
+  if [ "$status" = "GREEN" ]; then status="YELLOW"; fi
+fi
+
+echo "STATUS=$status detail=$(IFS=' '; echo "${dets[*]}")"

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1",
+  "name": "monthly-burn",
+  "skill_uri": "skill://daily-ai-agents/monthly-burn",
+  "description": "Aggregates monthly cash burn across Anthropic, ElevenLabs, Cloudflare, Stripe fees, GitHub Actions, and domain registrations. Reads from MCP servers where available; falls back to manual env-var or file-based entries. Output to data/finance/burn/<YYYY-MM>.md as the canonical monthly burn statement. Manual-entry rows are flagged so Cooper sees what is automated vs what still needs hand-update.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "accountant",
+  "capability_tags": [
+    "burn",
+    "monthly",
+    "stripe"
+  ],
+  "dependencies": [],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/monthly-burn",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/monthly-burn/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

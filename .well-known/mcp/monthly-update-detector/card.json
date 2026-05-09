@@ -1,0 +1,17 @@
+{
+  "schema_version": "1",
+  "name": "monthly-update-detector",
+  "skill_uri": "skill://daily-ai-agents/monthly-update-detector",
+  "description": "\"Nightly 03:00 CT scan: identifies skills whose newest file mtime crossed 25 days. Writes stale-list to data/curator/stale-skills-<date>.md. NEVER auto-bumps timestamps \u2014 only Cooper decides what to refresh. Sunday 09:30 CT weekly Telegram digest summarizes stale skills sorted by quality_score (high-value first).\"",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "builder",
+  "capability_tags": [],
+  "dependencies": [],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/monthly-update-detector",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/monthly-update-detector/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "1",
+  "name": "receipt-stream-publisher",
+  "skill_uri": "skill://daily-ai-agents/receipt-stream-publisher",
+  "description": "Hourly publish of an operational ticker \u2014 last 24h commits, voice-gate pass/fail counts, P-gate catches, smoke-tests, substrate state. Auto-publishes to site/receipts.html + site/api/receipts.json. Public surface, scrubber-HARD. Operational receipts compound into a recruitable artifact for prospects who want to verify what's actually shipping.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "ops",
+  "capability_tags": [
+    "publisher",
+    "receipt",
+    "stream",
+    "voice"
+  ],
+  "dependencies": [
+    "gateway-pulse",
+    "launchd-drift-recovery"
+  ],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/receipt-stream-publisher",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/receipt-stream-publisher/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

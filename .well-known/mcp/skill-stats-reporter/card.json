@@ -1,0 +1,22 @@
+{
+  "schema_version": "1",
+  "name": "skill-stats-reporter",
+  "skill_uri": "skill://daily-ai-agents/skill-stats-reporter",
+  "description": "Reads data/skill-telemetry/invocations.jsonl and produces daily stats \u2014 dead skills (zero invocations in last 30d), hot skills (>10 invocations/day on average), failure rates per skill, median wallclock per skill. Auto-publishes the dead-skill list to data/skill-telemetry/dead-skills-pending-review.md so future sessions can promote-or-delete in batch.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "ops",
+  "capability_tags": [
+    "daily",
+    "reporter",
+    "skill",
+    "stats"
+  ],
+  "dependencies": [],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/skill-stats-reporter",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/skill-stats-reporter/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

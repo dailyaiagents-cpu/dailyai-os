@@ -1,0 +1,23 @@
+{
+  "schema_version": "1",
+  "name": "state-of-company-publisher",
+  "skill_uri": "skill://daily-ai-agents/state-of-company-publisher",
+  "description": "Sundays 18:00 CDT. Composes a public state-of-the-company narrative covering the past 7 days \u2014 what shipped, what was caught, what's being tested next. Reads private inputs (open handoffs by specialist, latest sunday-review, recent decisions, recent P-gate catches) and emits a sanitized public-safe markdown narrative through voice-gate (newsletter surface, threshold 70+) and scrubber HARD. Auto-publishes to site/state.html if both gates pass; otherwise saves to data/state-drafts/ for Cooper.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "hermes",
+  "capability_tags": [
+    "company",
+    "newsletter",
+    "publisher",
+    "state",
+    "voice"
+  ],
+  "dependencies": [],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/state-of-company-publisher",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/state-of-company-publisher/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

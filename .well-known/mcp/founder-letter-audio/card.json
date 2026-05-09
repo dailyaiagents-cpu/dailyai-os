@@ -1,0 +1,23 @@
+{
+  "schema_version": "1",
+  "name": "founder-letter-audio",
+  "skill_uri": "skill://daily-ai-agents/founder-letter-audio",
+  "description": "Renders a Cooper-edited founder letter to MP3 via ElevenLabs TTS. Voice-gate + scrubber HARD before any cloud call. Pinned voice Sarah (EXAVITQu4vr4xnSDxMaL), model eleven_multilingual_v2. Tracks usage against the 10K-char free-tier monthly cap.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "content",
+  "capability_tags": [
+    "audio",
+    "founder",
+    "letter",
+    "monthly",
+    "voice"
+  ],
+  "dependencies": [],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/founder-letter-audio",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/founder-letter-audio/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

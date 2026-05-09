@@ -1,0 +1,23 @@
+{
+  "schema_version": "1",
+  "name": "meta-skill",
+  "skill_uri": "skill://daily-ai-agents/meta-skill",
+  "description": "The skill that creates skills. Reads a problem description, asks local Ollama to extract a skill spec (name, owner, pipeline, trigger, status codes), generates scaffolded SOUL.md + SKILL.md + run.sh, runs voice-gate + scrubber + bash-syntax + smoke on a synthetic input, lands the result in ~/.openclaw/skills/<name>/ if all checks pass or in data/proposed_skills/cont-17-meta/ if any fail. The runtime that writes its own tools, constrained to the SOUL+SKILL+run.sh schema and validated at every step.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "hermes",
+  "capability_tags": [
+    "meta",
+    "skill",
+    "voice"
+  ],
+  "dependencies": [
+    "cont-17-meta"
+  ],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/meta-skill",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/meta-skill/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

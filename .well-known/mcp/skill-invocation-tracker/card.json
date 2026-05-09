@@ -1,0 +1,22 @@
+{
+  "schema_version": "1",
+  "name": "skill-invocation-tracker",
+  "skill_uri": "skill://daily-ai-agents/skill-invocation-tracker",
+  "description": "Append-only telemetry helpers \u2014 track_start and track_end. Adds two-line instrumentation to any skill so the catalog produces measurable invocation counts, success rates, and median wallclock. Read by skill-stats reporter daily to identify dead skills (0 invocations in 30d) and hot skills (>10/day).",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "ops",
+  "capability_tags": [
+    "daily",
+    "invocation",
+    "skill",
+    "tracker"
+  ],
+  "dependencies": [],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/skill-invocation-tracker",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/skill-invocation-tracker/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1",
+  "name": "gitignore-drift-monitor",
+  "skill_uri": "skill://daily-ai-agents/gitignore-drift-monitor",
+  "description": "Watcher \u2014 count uncommitted files in repo, surface dominant drift class. YELLOW >100, RED >250.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "builder",
+  "capability_tags": [
+    "drift",
+    "gitignore",
+    "monitor"
+  ],
+  "dependencies": [],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/gitignore-drift-monitor",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/gitignore-drift-monitor/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

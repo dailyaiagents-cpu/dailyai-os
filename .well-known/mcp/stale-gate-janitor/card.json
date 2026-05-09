@@ -1,0 +1,23 @@
+{
+  "schema_version": "1",
+  "name": "stale-gate-janitor",
+  "skill_uri": "skill://daily-ai-agents/stale-gate-janitor",
+  "description": "Daily 04:00 CT housekeeping over data/approval-gates/. Expires pending past expires_at, archives gates >7 days old. Telegram only on change.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "builder",
+  "capability_tags": [
+    "daily",
+    "gate",
+    "janitor",
+    "stale",
+    "telegram"
+  ],
+  "dependencies": [],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/stale-gate-janitor",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/stale-gate-janitor/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

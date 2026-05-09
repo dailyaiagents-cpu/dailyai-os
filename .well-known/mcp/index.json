@@ -1,0 +1,28 @@
+{
+  "schema_version": "1",
+  "hub": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "generated_at": "2026-05-08T23:08:06Z",
+  "total": 20,
+  "skills": [
+    {"name": "cron-self-heal", "card": "./cron-self-heal/card.json"},
+    {"name": "founder-letter-audio", "card": "./founder-letter-audio/card.json"},
+    {"name": "gateway-pulse", "card": "./gateway-pulse/card.json"},
+    {"name": "gitignore-drift-monitor", "card": "./gitignore-drift-monitor/card.json"},
+    {"name": "heartbeat-silence-check", "card": "./heartbeat-silence-check/card.json"},
+    {"name": "launchd-drift-recovery", "card": "./launchd-drift-recovery/card.json"},
+    {"name": "meta-skill", "card": "./meta-skill/card.json"},
+    {"name": "methodology-essay-publisher", "card": "./methodology-essay-publisher/card.json"},
+    {"name": "monthly-burn", "card": "./monthly-burn/card.json"},
+    {"name": "monthly-update-detector", "card": "./monthly-update-detector/card.json"},
+    {"name": "mrr-floor-check", "card": "./mrr-floor-check/card.json"},
+    {"name": "plist-drift-detector", "card": "./plist-drift-detector/card.json"},
+    {"name": "receipt-stream-publisher", "card": "./receipt-stream-publisher/card.json"},
+    {"name": "skill-coverage-monitor", "card": "./skill-coverage-monitor/card.json"},
+    {"name": "skill-invocation-tracker", "card": "./skill-invocation-tracker/card.json"},
+    {"name": "skill-registry-sync", "card": "./skill-registry-sync/card.json"},
+    {"name": "skill-spotlight-publisher", "card": "./skill-spotlight-publisher/card.json"},
+    {"name": "skill-stats-reporter", "card": "./skill-stats-reporter/card.json"},
+    {"name": "stale-gate-janitor", "card": "./stale-gate-janitor/card.json"},
+    {"name": "state-of-company-publisher", "card": "./state-of-company-publisher/card.json"}
+  ]
+}

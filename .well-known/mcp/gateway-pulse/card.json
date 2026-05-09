@@ -1,0 +1,24 @@
+{
+  "schema_version": "1",
+  "name": "gateway-pulse",
+  "skill_uri": "skill://daily-ai-agents/gateway-pulse",
+  "description": "Probe Hermes/OpenClaw/Paperclip/Obsidian. RED on outage. Auto-bootstrap if trust-graph allows (skill=gateway-pulse, domain=service_restart, score\u22650.8). Pure bash + curl + nc.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "builder",
+  "capability_tags": [
+    "gateway",
+    "hermes",
+    "pulse",
+    "skill"
+  ],
+  "dependencies": [
+    "substrate-watchers"
+  ],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/gateway-pulse",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/gateway-pulse/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

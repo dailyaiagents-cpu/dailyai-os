@@ -1,0 +1,23 @@
+{
+  "schema_version": "1",
+  "name": "skill-coverage-monitor",
+  "skill_uri": "skill://daily-ai-agents/skill-coverage-monitor",
+  "description": "Walks every skill directory in skills/ and ~/.openclaw/skills/, validates each has SOUL.md (voice \u226575), SKILL.md, run.sh (executable), and a launchd plist OR an \"on-call\" marker. Outputs a coverage report listing missing pieces. Run weekly + on-demand.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "ops",
+  "capability_tags": [
+    "coverage",
+    "monitor",
+    "skill",
+    "voice",
+    "weekly"
+  ],
+  "dependencies": [],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/skill-coverage-monitor",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/skill-coverage-monitor/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1",
+  "name": "launchd-drift-recovery",
+  "skill_uri": "skill://daily-ai-agents/launchd-drift-recovery",
+  "description": "Watcher \u2014 kickstart -k drifted critical plists. Trust-graph-gated, throttled to 1 kickstart per plist per hour.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "builder",
+  "capability_tags": [
+    "drift",
+    "launchd",
+    "recovery"
+  ],
+  "dependencies": [],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/launchd-drift-recovery",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/launchd-drift-recovery/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

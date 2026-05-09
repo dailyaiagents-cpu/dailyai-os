@@ -1,0 +1,23 @@
+{
+  "schema_version": "1",
+  "name": "methodology-essay-publisher",
+  "skill_uri": "skill://daily-ai-agents/methodology-essay-publisher",
+  "description": "One-shot skill that splits docs/methodology.md into 8 standalone essays, adds a 2-paragraph intro and \"what to read next\" footer to each, runs voice-gate (essay surface, threshold 70 HARD) plus scrubber HARD, and auto-publishes passing essays to site/essays/. Drafts that fail either gate land in data/essays/drafts/ for Cooper. Site footer link added to /essays. The build-trap counter \u2014 converts existing IP into eight SEO-compounding pages without needing fresh Cooper input.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "content",
+  "capability_tags": [
+    "essay",
+    "methodology",
+    "publisher",
+    "skill",
+    "voice"
+  ],
+  "dependencies": [],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/methodology-essay-publisher",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/methodology-essay-publisher/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}

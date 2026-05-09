@@ -1,0 +1,30 @@
+# voice-scrubber default banlist
+# One phrase per line. Case-insensitive substring match.
+# Comments (#) and empty lines ignored.
+# Edit to your team's voice — these are the LLM-defaults the original team blocks.
+
+leverage synergy
+unlock value
+revolutionize
+game-changer
+seamless integration
+cutting-edge
+state-of-the-art
+best-in-class
+world-class
+end-to-end solution
+holistic approach
+robust framework
+deep dive
+turnkey
+mission-critical
+paradigm shift
+move the needle
+low-hanging fruit
+disrupt
+delve
+realm
+testament to
+in the realm of
+vibrant
+multifaceted

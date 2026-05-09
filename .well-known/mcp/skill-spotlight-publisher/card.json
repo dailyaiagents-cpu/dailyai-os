@@ -1,0 +1,27 @@
+{
+  "schema_version": "1",
+  "name": "skill-spotlight-publisher",
+  "skill_uri": "skill://daily-ai-agents/skill-spotlight-publisher",
+  "description": "Daily 09:00 CDT. Picks a skill from the catalog (weighted random; prefers skills not spotlit in last 60 days; prefers skills with measurable outcomes). Reads the SOUL.md plus SKILL.md and asks local Ollama qwen3.5 to write a 200-word non-technical explainer for a solo founder who hasn't seen DAI OS. Voice-gate (newsletter surface, threshold 70 HARD) plus scrubber HARD. If both pass auto-publishes to site/skills/<slug>/spotlight.html plus an index entry; if either fails saves to data/skill-spotlights/drafts/ for Cooper review.",
+  "owner": "Daily AI Agents LLC",
+  "license": "MIT",
+  "owner_agent": "content",
+  "capability_tags": [
+    "daily",
+    "newsletter",
+    "publisher",
+    "skill",
+    "spotlight",
+    "voice"
+  ],
+  "dependencies": [
+    ".",
+    "index.html"
+  ],
+  "homepage": "https://github.com/dailyaiagents-cpu/dailyai-os",
+  "repository": "https://github.com/dailyaiagents-cpu/dailyai-os/tree/main/skills/skill-spotlight-publisher",
+  "last_updated": "2026-05-08",
+  "transport": "stdio",
+  "entrypoint": "skills/skill-spotlight-publisher/run.sh",
+  "submission_status": "draft (cont-O will submit to mcp.so + Agensi)"
+}
