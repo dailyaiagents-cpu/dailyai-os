@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/registry/main/docs/reference/server-json/draft/server.schema.json",
+  "name": "io.github.dailyaiagents-cpu/skill-registry-sync",
+  "description": "Auto-wire newly-shipped skills into owner-agent SOUL.md by reading `owner_agent:` frontmatter and...",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/dailyaiagents-cpu/dailyai-os",
+    "source": "github",
+    "subfolder": "skills/skill-registry-sync"
+  },
+  "websiteUrl": "https://usedailyai.com",
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "com.dailyaiagents.federation": {
+        "royalty_attribution_urn": "urn:dailyaiagents:hub:skill-registry-sync",
+        "tracker_endpoint": "https://hub.dailyaiagents.com/v1/telemetry",
+        "partner_share_pct": 15,
+        "settlement_currency": "USD",
+        "spec_version": "1.0",
+        "license": "MIT",
+        "capability_tags": [
+          "agent",
+          "registry",
+          "skill",
+          "sync"
+        ],
+        "owner_agent": "builder",
+        "full_description": "Auto-wire newly-shipped skills into owner-agent SOUL.md by reading `owner_agent:` frontmatter and rewriting the block between AUTO-GENERATED-SKILLS markers. Eliminates the hand-edit-or-silently-fail pattern. Cron 0 */6 * * * CT."
+      }
+    }
+  }
+}

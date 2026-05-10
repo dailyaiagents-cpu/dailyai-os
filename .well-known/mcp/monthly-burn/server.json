@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/registry/main/docs/reference/server-json/draft/server.schema.json",
+  "name": "io.github.dailyaiagents-cpu/monthly-burn",
+  "description": "Aggregates monthly cash burn across Anthropic, ElevenLabs, Cloudflare, Stripe fees, GitHub Action...",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/dailyaiagents-cpu/dailyai-os",
+    "source": "github",
+    "subfolder": "skills/monthly-burn"
+  },
+  "websiteUrl": "https://usedailyai.com",
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "com.dailyaiagents.federation": {
+        "royalty_attribution_urn": "urn:dailyaiagents:hub:monthly-burn",
+        "tracker_endpoint": "https://hub.dailyaiagents.com/v1/telemetry",
+        "partner_share_pct": 15,
+        "settlement_currency": "USD",
+        "spec_version": "1.0",
+        "license": "MIT",
+        "capability_tags": [
+          "burn",
+          "monthly",
+          "stripe"
+        ],
+        "owner_agent": "accountant",
+        "full_description": "Aggregates monthly cash burn across Anthropic, ElevenLabs, Cloudflare, Stripe fees, GitHub Actions, and domain registrations. Reads from MCP servers where available; falls back to manual env-var or file-based entries. Output to data/finance/burn/<YYYY-MM>.md as the canonical monthly burn statement. Manual-entry rows are flagged so Cooper sees what is automated vs what still needs hand-update."
+      }
+    }
+  }
+}

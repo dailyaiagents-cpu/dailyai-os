@@ -25,12 +25,15 @@ else
   status="RED"
 fi
 
-# Paperclip — port 3100
+# Paperclip — DEMOTED 2026-05-09 (cont-19.10). Paperclip is a PARKED operator
+# surface, not a substrate pillar. Probe the port for observability so the
+# detail field is informative, but a paperclip-down state must NOT flip
+# gateway-pulse from GREEN. See .claude/skills/operator-surface-pulse/
+# for the operator-surface health gate.
 if curl -sf --max-time 3 -o /dev/null http://127.0.0.1:3100/ 2>/dev/null; then
   dets+=("paperclip:ok")
 else
-  dets+=("paperclip:DOWN")
-  if [ "$status" = "GREEN" ]; then status="YELLOW"; fi
+  dets+=("paperclip:parked")
 fi
 
 # Obsidian — port 27124 (https with token)

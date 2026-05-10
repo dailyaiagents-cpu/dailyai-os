@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/registry/main/docs/reference/server-json/draft/server.schema.json",
+  "name": "io.github.dailyaiagents-cpu/monthly-update-detector",
+  "description": "\"Nightly 03:00 CT scan: identifies skills whose newest file mtime crossed 25 days",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/dailyaiagents-cpu/dailyai-os",
+    "source": "github",
+    "subfolder": "skills/monthly-update-detector"
+  },
+  "websiteUrl": "https://usedailyai.com",
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "com.dailyaiagents.federation": {
+        "royalty_attribution_urn": "urn:dailyaiagents:hub:monthly-update-detector",
+        "tracker_endpoint": "https://hub.dailyaiagents.com/v1/telemetry",
+        "partner_share_pct": 15,
+        "settlement_currency": "USD",
+        "spec_version": "1.0",
+        "license": "MIT",
+        "capability_tags": [],
+        "owner_agent": "builder",
+        "full_description": "\"Nightly 03:00 CT scan: identifies skills whose newest file mtime crossed 25 days. Writes stale-list to data/curator/stale-skills-<date>.md. NEVER auto-bumps timestamps \u2014 only Cooper decides what to refresh. Sunday 09:30 CT weekly Telegram digest summarizes stale skills sorted by quality_score (high-value first).\""
+      }
+    }
+  }
+}

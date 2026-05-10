@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/registry/main/docs/reference/server-json/draft/server.schema.json",
+  "name": "io.github.dailyaiagents-cpu/skill-coverage-monitor",
+  "description": "Walks every skill directory in skills/ and ~/.openclaw/skills/, validates each has SOUL.md (voice...",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/dailyaiagents-cpu/dailyai-os",
+    "source": "github",
+    "subfolder": "skills/skill-coverage-monitor"
+  },
+  "websiteUrl": "https://usedailyai.com",
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "com.dailyaiagents.federation": {
+        "royalty_attribution_urn": "urn:dailyaiagents:hub:skill-coverage-monitor",
+        "tracker_endpoint": "https://hub.dailyaiagents.com/v1/telemetry",
+        "partner_share_pct": 15,
+        "settlement_currency": "USD",
+        "spec_version": "1.0",
+        "license": "MIT",
+        "capability_tags": [
+          "coverage",
+          "monitor",
+          "skill",
+          "voice",
+          "weekly"
+        ],
+        "owner_agent": "ops",
+        "full_description": "Walks every skill directory in skills/ and ~/.openclaw/skills/, validates each has SOUL.md (voice \u226575), SKILL.md, run.sh (executable), and a launchd plist OR an \"on-call\" marker. Outputs a coverage report listing missing pieces. Run weekly + on-demand."
+      }
+    }
+  }
+}

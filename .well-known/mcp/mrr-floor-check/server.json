@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/registry/main/docs/reference/server-json/draft/server.schema.json",
+  "name": "io.github.dailyaiagents-cpu/mrr-floor-check",
+  "description": "Daily Stripe MRR query against a configured floor",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/dailyaiagents-cpu/dailyai-os",
+    "source": "github",
+    "subfolder": "skills/mrr-floor-check"
+  },
+  "websiteUrl": "https://usedailyai.com",
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "com.dailyaiagents.federation": {
+        "royalty_attribution_urn": "urn:dailyaiagents:hub:mrr-floor-check",
+        "tracker_endpoint": "https://hub.dailyaiagents.com/v1/telemetry",
+        "partner_share_pct": 15,
+        "settlement_currency": "USD",
+        "spec_version": "1.0",
+        "license": "MIT",
+        "capability_tags": [
+          "check",
+          "daily",
+          "floor",
+          "stripe",
+          "telegram"
+        ],
+        "owner_agent": "hermes",
+        "full_description": "Daily Stripe MRR query against a configured floor. Writes snapshot JSON to data/finance/mrr_history/, fires Telegram high-priority alert on floor breach. Floor is 0 by default (silent) until Cooper tunes it after 30 days of data."
+      }
+    }
+  }
+}

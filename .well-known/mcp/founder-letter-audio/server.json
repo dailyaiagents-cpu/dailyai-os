@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/registry/main/docs/reference/server-json/draft/server.schema.json",
+  "name": "io.github.dailyaiagents-cpu/founder-letter-audio",
+  "description": "Renders a Cooper-edited founder letter to MP3 via ElevenLabs TTS",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/dailyaiagents-cpu/dailyai-os",
+    "source": "github",
+    "subfolder": "skills/founder-letter-audio"
+  },
+  "websiteUrl": "https://usedailyai.com",
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "com.dailyaiagents.federation": {
+        "royalty_attribution_urn": "urn:dailyaiagents:hub:founder-letter-audio",
+        "tracker_endpoint": "https://hub.dailyaiagents.com/v1/telemetry",
+        "partner_share_pct": 15,
+        "settlement_currency": "USD",
+        "spec_version": "1.0",
+        "license": "MIT",
+        "capability_tags": [
+          "audio",
+          "founder",
+          "letter",
+          "monthly",
+          "voice"
+        ],
+        "owner_agent": "content",
+        "full_description": "Renders a Cooper-edited founder letter to MP3 via ElevenLabs TTS. Voice-gate + scrubber HARD before any cloud call. Pinned voice Sarah (EXAVITQu4vr4xnSDxMaL), model eleven_multilingual_v2. Tracks usage against the 10K-char free-tier monthly cap."
+      }
+    }
+  }
+}

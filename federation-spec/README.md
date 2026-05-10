@@ -23,6 +23,13 @@ This is a public, read-only specification. The spec itself is licensed under the
 
 This spec follows semver. Breaking protocol changes require a major-version bump and a 90-day deprecation window. The hub publishes a `/.well-known/federation-spec.json` document declaring the supported spec versions.
 
+**Current version: `1.1.0`** (bumped 2026-05-09 in cont-19.9-P-mcp-distribution to add the `royalty_attribution` field to server cards — see PROTOCOL.md).
+
+| Version | Date | Change |
+|---|---|---|
+| 1.0.0 | 2026-05-08 | cont-19.9-N initial draft. MCP + A2A protocols, telemetry envelope, quality gates 1–6, royalty model. |
+| 1.1.0 | 2026-05-09 | cont-19.9-P additive change. Adds `royalty_attribution` field to server cards (`.well-known/mcp/<name>/card.json` and Official Registry `server.json` `_meta` block) so cross-listed skills carry their settlement URN regardless of which registry is the discovery surface. Fully backwards-compatible (field optional in 1.0.0 consumers). |
+
 ## Status
 
-cont-19.9-N draft. Not finalized. Comments via GitHub Issues at `dailyaiagents-cpu/dailyai-os`.
+cont-19.9-P draft. Not finalized. Comments via GitHub Issues at `dailyaiagents-cpu/dailyai-os`.

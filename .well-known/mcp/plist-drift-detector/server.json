@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/registry/main/docs/reference/server-json/draft/server.schema.json",
+  "name": "io.github.dailyaiagents-cpu/plist-drift-detector",
+  "description": "Every 6h, compare loaded launchd labels (launchctl list) against source-of-truth plists in config...",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/dailyaiagents-cpu/dailyai-os",
+    "source": "github",
+    "subfolder": "skills/plist-drift-detector"
+  },
+  "websiteUrl": "https://usedailyai.com",
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "com.dailyaiagents.federation": {
+        "royalty_attribution_urn": "urn:dailyaiagents:hub:plist-drift-detector",
+        "tracker_endpoint": "https://hub.dailyaiagents.com/v1/telemetry",
+        "partner_share_pct": 15,
+        "settlement_currency": "USD",
+        "spec_version": "1.0",
+        "license": "MIT",
+        "capability_tags": [
+          "detector",
+          "drift",
+          "plist",
+          "telegram"
+        ],
+        "owner_agent": "ops",
+        "full_description": "Every 6h, compare loaded launchd labels (launchctl list) against source-of-truth plists in config/launchd/. Telegram-alerts on missing-from-source or missing-from-loaded. State file for cooldown so we don't repeat alerts on stable drift."
+      }
+    }
+  }
+}

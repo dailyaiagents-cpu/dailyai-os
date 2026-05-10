@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/registry/main/docs/reference/server-json/draft/server.schema.json",
+  "name": "io.github.dailyaiagents-cpu/skill-stats-reporter",
+  "description": "Reads data/skill-telemetry/invocations.jsonl and produces daily stats \u2014 dead skills (zero invocat...",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/dailyaiagents-cpu/dailyai-os",
+    "source": "github",
+    "subfolder": "skills/skill-stats-reporter"
+  },
+  "websiteUrl": "https://usedailyai.com",
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "com.dailyaiagents.federation": {
+        "royalty_attribution_urn": "urn:dailyaiagents:hub:skill-stats-reporter",
+        "tracker_endpoint": "https://hub.dailyaiagents.com/v1/telemetry",
+        "partner_share_pct": 15,
+        "settlement_currency": "USD",
+        "spec_version": "1.0",
+        "license": "MIT",
+        "capability_tags": [
+          "daily",
+          "reporter",
+          "skill",
+          "stats"
+        ],
+        "owner_agent": "ops",
+        "full_description": "Reads data/skill-telemetry/invocations.jsonl and produces daily stats \u2014 dead skills (zero invocations in last 30d), hot skills (>10 invocations/day on average), failure rates per skill, median wallclock per skill. Auto-publishes the dead-skill list to data/skill-telemetry/dead-skills-pending-review.md so future sessions can promote-or-delete in batch."
+      }
+    }
+  }
+}

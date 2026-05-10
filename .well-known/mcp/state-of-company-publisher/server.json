@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/registry/main/docs/reference/server-json/draft/server.schema.json",
+  "name": "io.github.dailyaiagents-cpu/state-of-company-publisher",
+  "description": "Sundays 18:00 CDT. Composes a public state-of-the-company narrative covering the past 7 days \u2014 wh...",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/dailyaiagents-cpu/dailyai-os",
+    "source": "github",
+    "subfolder": "skills/state-of-company-publisher"
+  },
+  "websiteUrl": "https://usedailyai.com",
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "com.dailyaiagents.federation": {
+        "royalty_attribution_urn": "urn:dailyaiagents:hub:state-of-company-publisher",
+        "tracker_endpoint": "https://hub.dailyaiagents.com/v1/telemetry",
+        "partner_share_pct": 15,
+        "settlement_currency": "USD",
+        "spec_version": "1.0",
+        "license": "MIT",
+        "capability_tags": [
+          "company",
+          "newsletter",
+          "publisher",
+          "state",
+          "voice"
+        ],
+        "owner_agent": "hermes",
+        "full_description": "Sundays 18:00 CDT. Composes a public state-of-the-company narrative covering the past 7 days \u2014 what shipped, what was caught, what's being tested next. Reads private inputs (open handoffs by specialist, latest sunday-review, recent decisions, recent P-gate catches) and emits a sanitized public-safe markdown narrative through voice-gate (newsletter surface, threshold 70+) and scrubber HARD. Auto-publishes to site/state.html if both gates pass; otherwise saves to data/state-drafts/ for Cooper."
+      }
+    }
+  }
+}

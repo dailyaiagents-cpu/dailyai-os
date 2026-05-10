@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/registry/main/docs/reference/server-json/draft/server.schema.json",
+  "name": "io.github.dailyaiagents-cpu/gitignore-drift-monitor",
+  "description": "Watcher \u2014 count uncommitted files in repo, surface dominant drift class. YELLOW >100, RED >250.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/dailyaiagents-cpu/dailyai-os",
+    "source": "github",
+    "subfolder": "skills/gitignore-drift-monitor"
+  },
+  "websiteUrl": "https://usedailyai.com",
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "com.dailyaiagents.federation": {
+        "royalty_attribution_urn": "urn:dailyaiagents:hub:gitignore-drift-monitor",
+        "tracker_endpoint": "https://hub.dailyaiagents.com/v1/telemetry",
+        "partner_share_pct": 15,
+        "settlement_currency": "USD",
+        "spec_version": "1.0",
+        "license": "MIT",
+        "capability_tags": [
+          "drift",
+          "gitignore",
+          "monitor"
+        ],
+        "owner_agent": "builder",
+        "full_description": "Watcher \u2014 count uncommitted files in repo, surface dominant drift class. YELLOW >100, RED >250."
+      }
+    }
+  }
+}

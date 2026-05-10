@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/registry/main/docs/reference/server-json/draft/server.schema.json",
+  "name": "io.github.dailyaiagents-cpu/stale-gate-janitor",
+  "description": "Daily 04:00 CT housekeeping over data/approval-gates/",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/dailyaiagents-cpu/dailyai-os",
+    "source": "github",
+    "subfolder": "skills/stale-gate-janitor"
+  },
+  "websiteUrl": "https://usedailyai.com",
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "com.dailyaiagents.federation": {
+        "royalty_attribution_urn": "urn:dailyaiagents:hub:stale-gate-janitor",
+        "tracker_endpoint": "https://hub.dailyaiagents.com/v1/telemetry",
+        "partner_share_pct": 15,
+        "settlement_currency": "USD",
+        "spec_version": "1.0",
+        "license": "MIT",
+        "capability_tags": [
+          "daily",
+          "gate",
+          "janitor",
+          "stale",
+          "telegram"
+        ],
+        "owner_agent": "builder",
+        "full_description": "Daily 04:00 CT housekeeping over data/approval-gates/. Expires pending past expires_at, archives gates >7 days old. Telegram only on change."
+      }
+    }
+  }
+}

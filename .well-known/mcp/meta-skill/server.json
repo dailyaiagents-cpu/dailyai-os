@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/registry/main/docs/reference/server-json/draft/server.schema.json",
+  "name": "io.github.dailyaiagents-cpu/meta-skill",
+  "description": "The skill that creates skills",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/dailyaiagents-cpu/dailyai-os",
+    "source": "github",
+    "subfolder": "skills/meta-skill"
+  },
+  "websiteUrl": "https://usedailyai.com",
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "com.dailyaiagents.federation": {
+        "royalty_attribution_urn": "urn:dailyaiagents:hub:meta-skill",
+        "tracker_endpoint": "https://hub.dailyaiagents.com/v1/telemetry",
+        "partner_share_pct": 15,
+        "settlement_currency": "USD",
+        "spec_version": "1.0",
+        "license": "MIT",
+        "capability_tags": [
+          "meta",
+          "skill",
+          "voice"
+        ],
+        "owner_agent": "hermes",
+        "full_description": "The skill that creates skills. Reads a problem description, asks local Ollama to extract a skill spec (name, owner, pipeline, trigger, status codes), generates scaffolded SOUL.md + SKILL.md + run.sh, runs voice-gate + scrubber + bash-syntax + smoke on a synthetic input, lands the result in ~/.openclaw/skills/<name>/ if all checks pass or in data/proposed_skills/cont-17-meta/ if any fail. The runtime that writes its own tools, constrained to the SOUL+SKILL+run.sh schema and validated at every step."
+      }
+    }
+  }
+}

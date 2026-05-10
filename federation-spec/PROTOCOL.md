@@ -12,6 +12,34 @@ Tool calls between an agent and a federated skill use the Model Context Protocol
 
 The hub's discovery endpoint is itself an MCP server: it exposes one tool, `find_skill(query)`, returning the URI list of matching cards. A federated agent can then call those skills directly via their declared transport.
 
+### Royalty attribution on server cards (added in spec 1.1.0)
+
+Every server card MUST include a top-level `royalty_attribution` block so any consumer of the card — whether the federation hub directly, the Official MCP Registry, Smithery, MCPMarket, Cline, or a downstream subregistry — can map invocations back to a settlement entry.
+
+```json
+"royalty_attribution": {
+  "urn": "urn:dailyaiagents:hub:<skill-slug>",
+  "tracker_endpoint": "https://hub.dailyaiagents.com/v1/telemetry",
+  "partner_share_pct": 15,
+  "settlement_currency": "USD",
+  "spec_version": "1.0"
+}
+```
+
+Field semantics:
+
+- `urn` — opaque identifier the hub uses to credit invocations of this skill. Follows the URN format `urn:dailyaiagents:hub:<skill-slug>`. Stable across registry re-listings; never reassigned.
+- `tracker_endpoint` — HTTPS POST endpoint that accepts batched telemetry envelopes (see "Telemetry envelope" below). One endpoint per hub.
+- `partner_share_pct` — current partner-share percentage paid out per invocation (mirrors `ROYALTY-MODEL.md` line 31). Provided for partner transparency; the registered settlement value at execution time is the authoritative number.
+- `settlement_currency` — ISO 4217 currency code. USD only as of spec 1.1.0.
+- `spec_version` — version of the royalty-attribution sub-spec. Independent of the federation spec version. `"1.0"` for the field as defined here.
+
+Cards published before spec 1.1.0 (i.e. without `royalty_attribution`) are still accepted by the hub for backwards compatibility, but receive no royalty allocation; the hub treats them as donated capacity.
+
+Cross-registry mirror: when this card is exported as an Official MCP Registry `server.json`, the same block is mirrored under
+`_meta.io.modelcontextprotocol.registry/publisher-provided.com.dailyaiagents.federation.{royalty_attribution_urn,tracker_endpoint,partner_share_pct,settlement_currency,spec_version}`
+because the Official Registry's `_meta` namespace policy forbids top-level extension fields and preserves only data under `io.modelcontextprotocol.registry/publisher-provided`.
+
 ## Agent-to-agent comms — A2A
 
 Cross-substrate agent messaging uses the A2A working draft from the agent-protocol working group. (Canonical URL: search the most recent version of the protocol — agents are expected to load the link at startup, not hard-code a version into their substrate.)

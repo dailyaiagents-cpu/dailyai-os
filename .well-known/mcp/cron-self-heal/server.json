@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/registry/main/docs/reference/server-json/draft/server.schema.json",
+  "name": "io.github.dailyaiagents-cpu/cron-self-heal",
+  "description": "Watcher \u2014 surfaces crons in error state",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/dailyaiagents-cpu/dailyai-os",
+    "source": "github",
+    "subfolder": "skills/cron-self-heal"
+  },
+  "websiteUrl": "https://usedailyai.com",
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "com.dailyaiagents.federation": {
+        "royalty_attribution_urn": "urn:dailyaiagents:hub:cron-self-heal",
+        "tracker_endpoint": "https://hub.dailyaiagents.com/v1/telemetry",
+        "partner_share_pct": 15,
+        "settlement_currency": "USD",
+        "spec_version": "1.0",
+        "license": "MIT",
+        "capability_tags": [
+          "cron",
+          "heal",
+          "self",
+          "skill"
+        ],
+        "owner_agent": "builder",
+        "full_description": "Watcher \u2014 surfaces crons in error state. RED if >33% failing, YELLOW otherwise. Future: glob-match per-skill expected_output_glob frontmatter for richer health."
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/registry/main/docs/reference/server-json/draft/server.schema.json",
+  "name": "io.github.dailyaiagents-cpu/heartbeat-silence-check",
+  "description": "Detects when workspace/system_memory/heartbeats.json mtime exceeds the silence threshold (default...",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/dailyaiagents-cpu/dailyai-os",
+    "source": "github",
+    "subfolder": "skills/heartbeat-silence-check"
+  },
+  "websiteUrl": "https://usedailyai.com",
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "com.dailyaiagents.federation": {
+        "royalty_attribution_urn": "urn:dailyaiagents:hub:heartbeat-silence-check",
+        "tracker_endpoint": "https://hub.dailyaiagents.com/v1/telemetry",
+        "partner_share_pct": 15,
+        "settlement_currency": "USD",
+        "spec_version": "1.0",
+        "license": "MIT",
+        "capability_tags": [
+          "check",
+          "heartbeat",
+          "silence",
+          "telegram",
+          "voice"
+        ],
+        "owner_agent": "ops",
+        "full_description": "Detects when workspace/system_memory/heartbeats.json mtime exceeds the silence threshold (default 6h). Voice-alerts + Telegram-pings Cooper at high priority. Counter-measure for the v11.0 archive-too-aggressive failure that left the heartbeat-collector silent for 67h before cont-14 revived it."
+      }
+    }
+  }
+}
