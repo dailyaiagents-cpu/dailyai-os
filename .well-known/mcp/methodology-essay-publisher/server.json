@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/registry/main/docs/reference/server-json/draft/server.schema.json",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
   "name": "io.github.dailyaiagents-cpu/methodology-essay-publisher",
   "description": "One-shot skill that splits docs/methodology.md into 8 standalone essays, adds a 2-paragraph intro...",
   "version": "0.1.0",
@@ -13,7 +13,7 @@
     "io.modelcontextprotocol.registry/publisher-provided": {
       "com.dailyaiagents.federation": {
         "royalty_attribution_urn": "urn:dailyaiagents:hub:methodology-essay-publisher",
-        "tracker_endpoint": "https://hub.dailyaiagents.com/v1/telemetry",
+        "tracker_endpoint": "https://hub.usedailyai.com/v1/telemetry",
         "partner_share_pct": 15,
         "settlement_currency": "USD",
         "spec_version": "1.0",

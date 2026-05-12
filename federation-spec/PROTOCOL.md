@@ -19,7 +19,7 @@ Every server card MUST include a top-level `royalty_attribution` block so any co
 ```json
 "royalty_attribution": {
   "urn": "urn:dailyaiagents:hub:<skill-slug>",
-  "tracker_endpoint": "https://hub.dailyaiagents.com/v1/telemetry",
+  "tracker_endpoint": "https://hub.usedailyai.com/v1/telemetry",
   "partner_share_pct": 15,
   "settlement_currency": "USD",
   "spec_version": "1.0"
